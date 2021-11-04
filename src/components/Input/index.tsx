@@ -3,13 +3,21 @@ import {
   useRef,
   useState,
   useCallback,
+  ReactSVGElement,
 } from 'react';
 
 import { useField } from '@unform/core';
 
 import { Container } from './styles';
 
-const Input = ({ name, icon: Icon, ...rest }) => {
+
+interface InputProps {
+  name: string;
+  icon?: ReactSVGElement
+  rest: 
+}
+
+const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
   const inputRef = useRef(null);
 
   const [isFocused, setIsFocused] = useState(false);
